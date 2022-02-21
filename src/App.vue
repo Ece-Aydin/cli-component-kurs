@@ -7,17 +7,20 @@
   <!-- <first-compo /> -->
   <firstCompo />
   <second-com /> 
+  <site-timer />
   </div>
 </template>
 
 <script>
 import firstCompo from './components/firstCompo.vue'
-import SecondCom from './components/SecondCom.vue';
+import SecondCom from './components/SecondCom.vue'
+import SiteTimer from './components/SiteTimer.vue'
 
 export default ({
   components: {
     firstCompo,
     SecondCom,
+    SiteTimer
   },
   data() {
     return{
