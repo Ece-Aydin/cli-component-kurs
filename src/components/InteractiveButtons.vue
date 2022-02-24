@@ -4,13 +4,13 @@
         <p class="text" v-if="!visibility">{{explain}}</p>
         <form class="form" id="myForm" v-if="visibility">
             <label class="label">Your ID : </label>
-            <input type="number" id="yourId" class="input">
+            <input type="number" id="yourId" class="input" v-model="anonimId">
             <br>
             <label class="label">Your Email : </label>
-            <input type="email" id="eMail" class="input">
+            <input type="email" id="eMail" class="input" v-model="anonimEmail">
             <br>
             <label class="label">Your Birthday : </label>
-            <input type="date" id="birth" class="input">
+            <input type="date" id="birth" class="input" v-model="anonimBirth">
             <br>
             <label class="label">Choose Gender : </label>
             <br>
@@ -31,6 +31,9 @@
 export default {
     data() {
         return {
+            anonimId : '',
+            anonimEmail : '',
+            anonimBirth : '',
             documentTitle : 'Example of Other Interactive Button',
             explain : 'Press button and see form. Form is hidden.',
             visibility : false
@@ -39,21 +42,21 @@ export default {
     methods : {
         getForm(){
             this.visibility = true;
-            localStorage.yourId = this.yourId;
-            localStorage.eMail = this.eMail;
-            localStorage.birth = this.birth;
+            localStorage.yourId = this.anonimId;
+            localStorage.eMail = this.anonimEmail;
+            localStorage.birth = this.anonimBirth;
             
         }
     },
     mounted() {
-        if(localStorage.yourId) {
-            this.yourId = localStorage.yourId;
+        if(localStorage.anonimId) {
+            this.anonimId = localStorage.anonimId;
         }
-        if(localStorage.eMail) {
-            this.eMail = localStorage.eMail;
+        if(localStorage.anonimEmail) {
+            this.anonimEmail = localStorage.anonimEmail;
         }
-        if(localStorage.birth) {
-            this.birth = localStorage.birth;
+        if(localStorage.anonimBirth) {
+            this.anonimBirth = localStorage.anonimBirth;
         }
     }
 }
