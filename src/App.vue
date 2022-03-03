@@ -1,41 +1,26 @@
 <template>
-  <div id="rootComponent">
-    <h2 class="heading">Divided</h2>
-    <divided-comp v-on:sendLog="transactions"  v-on:sendReg="tran"/>
-    <form-comp  v-on:sendForm="transac" />
-
+  <div id="nav">
+    <router-link to="/">Home</router-link> |
+    <router-link to="/about">About</router-link> |
+    <router-link to="/anasayfa">Anasayfa</router-link> |
+    <router-link to="/divided">Login / Sign Up</router-link> |
+    <router-link to="/contact">Contact</router-link> |
   </div>
+  <router-view/>
 </template>
-
-<script>
-import DividedComp from './components/DividedComp.vue'
-import FormComp from './components/FormComp.vue'
-export default({
-  components : {
-    DividedComp,
-    FormComp
-  },
-  methods : {
-    transactions(){
-      console.log("İlk componentini aldın <3. Bu log in butonu");
-    },
-    tran(){
-      console.log("ikinci componentini aldın. Bu register butonu ");
-    },
-    transac(){
-      console.log("üçüncü componentini aldın. Bu form <3 ");
-    }
-
-  }
-})
-</script>
-
 
 <style lang="scss">
 
-// $butonColor : #00e6e6;
-// .butons{
-//     color: $butonColor;
-// }
+#nav {
+  padding: 30px;
 
+  a {
+    font-weight: bold;
+    color: #2c3e50;
+
+    &.router-link-exact-active {
+      color: #42b983;
+    }
+  }
+}
 </style>
