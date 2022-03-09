@@ -28,6 +28,8 @@
         <button @click="login" class="butons" v-if="!showL">Click for login</button>
         <button @click="register" class="butons" v-if="!showS" >Click for register</button>
        
+<p class="link"><a href="">Forgot your password? </a></p>
+
     </div>
 </template>
 
@@ -94,5 +96,14 @@ export default {
     color: #ff66b3;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     
+}
+
+a{
+    text-decoration: none;
+}
+
+.link{
+    margin-left: 700px;
+    margin-top: 120px;
 }
 </style>
