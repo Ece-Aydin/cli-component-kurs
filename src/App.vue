@@ -3,9 +3,12 @@
     <!-- <router-link to="/">Home</router-link> |
     <router-link to="/about">About</router-link> | -->
     <router-link to="/anasayfa">Anasayfa</router-link> |
+    <br>
     <router-link to="/divided">Login / Sign Up</router-link> |
+    <br>
     <router-link to="/contact">Contact</router-link> |
-    <router-link to="/contact">Profile</router-link> |
+    <br>
+    <router-link to="/profil">Profile</router-link> |
   </div>
   <router-view/>
 </template>
