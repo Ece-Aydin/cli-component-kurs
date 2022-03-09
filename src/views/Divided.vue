@@ -1,24 +1,24 @@
 <template>
     <div id="divided">
-        <h3>MyBlog - Edited With Vue.js</h3>
+        <h3 class="heading">WELCOME TO MY-BLOG</h3>
         <form class="LogIn" @submit.prevent v-if="showL">
-            <label>Email:</label>
+            <label class="input">Email:</label>
             <input type="email" id="eM" class="input">
             <br>
-            <label>Password:</label>
+            <label class="input">Password:</label>
             <input type="password" id="pass" class="input">
             <br>
             <button @click="clickLog" class="butons">LOGIN</button>
         </form>
 
         <form class="SignUp" @submit.prevent v-if="showS">
-            <label for="">Email : </label>
+            <label class="input">Email : </label>
             <input type="email" id="Smail" class="input">
             <br>
-            <label for="">Name : </label>
+            <label class="input">Name : </label>
             <input type="text" id="Sname" class="input">
             <br>
-            <label for="">Password : </label>
+            <label class="input">Password : </label>
             <input type="password" id="Spassword" class="input" placeholder="en az 8 karakterli bir şifre belirleyiniz">
             <br>
             <button @click="clickSign" class="butons" >SIGN UP</button>
@@ -48,13 +48,13 @@ export default {
             this.sendLoginForm;
             this.showL = true;
            this.$emit('sendLog');
-        //    alert("Ece'nin Bloğu'na Hoşgeldiniz");
+        
         },
         register() {
             this.sendRegisterForm;
             this.showS = true
             this.$emit('sendReg');
-            // alert("Kaydınız başarıyla oluşturuldu. Keyifli okumalar.");
+           
         },
    
 
@@ -67,7 +67,8 @@ export default {
 @mixin butonButon {
     background-color: #000000;
     color: #fff;
-    margin: 10px
+    margin-left: 500px;
+    margin-top: 50px;
 }
 
 .butons{
@@ -81,11 +82,17 @@ export default {
     font-family: 'Times New Roman', Times, serif;
     margin: 10px;
     border-color: #000000;
+    margin-left: 500px;
     
 }
-
 .input{
     @include inputBlocks();
 }
 
+.heading{
+    text-align: center;
+    color: #ff66b3;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    
+}
 </style>
