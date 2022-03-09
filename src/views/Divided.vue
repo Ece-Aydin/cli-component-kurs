@@ -1,6 +1,6 @@
 <template>
     <div id="divided">
-        <h3 class="heading">WELCOME TO MY-BLOG</h3>
+        <h1>WELCOME TO MY-BLOG</h1>
         <form class="LogIn" @submit.prevent v-if="showL">
             <label class="input">Email:</label>
             <input type="email" id="eM" class="input">
@@ -69,7 +69,7 @@ export default {
 @mixin butonButon {
     background-color: #000000;
     color: #fff;
-    margin-left: 500px;
+    margin: 25px;
     margin-top: 50px;
 }
 
@@ -103,7 +103,7 @@ a{
 }
 
 .link{
-    margin-left: 700px;
-    margin-top: 120px;
+    margin-left: 25px;
+    margin-top: 25px;
 }
 </style>

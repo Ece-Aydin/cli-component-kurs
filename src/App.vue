@@ -5,6 +5,7 @@
     <router-link to="/anasayfa">Anasayfa</router-link> |
     <router-link to="/divided">Login / Sign Up</router-link> |
     <router-link to="/contact">Contact</router-link> |
+    <router-link to="/contact">Profile</router-link> |
   </div>
   <router-view/>
 </template>

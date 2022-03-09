@@ -1,6 +1,6 @@
 <template>
     <div id="house">
-        <h1>VUE-BLOG HOME</h1>
+        <h1 class="home">VUE-BLOG HOME</h1>
         <div class="liste">
             <ul class="myList">
                 <li class="mad"> <a href="Anasayfa.vue"> Home </a> </li>
@@ -53,9 +53,8 @@ export default{
     float: left;
     color: #0086b3;
     font-size: 20px;
-    margin: 50px;
-    
-
+    margin-left: 300px;
+    margin-top: 20px;
 
 }
 
@@ -63,7 +62,7 @@ export default{
 @include forList();
 }
 .par{
-    margin-top: 120px;
+    margin-top: 50px;
     font-family: Arial, Helvetica, sans-serif;
     font-size: 20px;
     color: #000000;
@@ -80,8 +79,11 @@ export default{
 .pic{
     width: 200px;
     height: 150px;
-    margin-left: 500px;
+    margin-left: 650px;
     
+}
+.home{
+    margin-left: 600px;
 }
 
 </style>

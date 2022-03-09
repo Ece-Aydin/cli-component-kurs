@@ -3,6 +3,7 @@ import Home from '../views/Home.vue'
 import Anasayfa from '../views/Anasayfa.vue'
 import Divided from '../views/Divided.vue'
 import Contact from '../views/Contact.vue'
+import Profil from '../views/Profil.vue'
 
 const routes = [
   {
@@ -24,6 +25,11 @@ const routes = [
     path: '/contact',
     name: 'contact',
     component: Contact,
+  },
+  {
+    path: '/profil',
+    name: 'profil',
+    component: Profil,
   },
   {
     path: '/about',

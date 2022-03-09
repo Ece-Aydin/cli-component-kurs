@@ -21,7 +21,7 @@
 <span class="shadow-input1"></span>
 </div>
 <div class="container-contact1-form-btn">
-<button class="contact1-form-btn">
+<button class="contact1-form-btn" @click="contactForm">
 <span>  SEND </span>
 </button>
         </div>
@@ -39,6 +39,7 @@ export default{
     methods : {
         contactForm() {
             this.formElements;
+            alert("Thanks! Your message has been delivered.")
 
         }
     }
