@@ -3,40 +3,28 @@
         <h1>Contact With Us!</h1>
         <div class="form-body">
         <div class="row">
-            <p>Please fill out the form for your complaints, suggestions and requests.</p>
-                <form class="requires-validation" novalidate>
-                    <div class="col-md-12">
-                        <input class="form-control" type="text" name="name" placeholder="Full Name" required>
-                     </div>
-
-                    <div class="col-md-12">
-                        <input class="form-control" type="email" name="email" placeholder="E-mail Address" required>
-                    </div>
-
-                    <div class="col-md-12">
-                        <select class="form-select mt-3" required>
-                                <option selected disabled value="">Position</option>
-                                    <option value="jweb">Writer</option>
-                                    <option value="sweb">Member</option>
-                        </select>                                
-                    </div>
-
-
-                    <div class="col-md-12">
-                        <input class="form-control" type="password" name="password" placeholder="Password" required>                    
-                    </div>
-
-
-                    <div class="col-md-12 mt-3">
-                        <label class="mb-3 mr-1" for="gender">Gender: </label>
-                        <input type="radio" class="btn-check" name="gender" id="male" autocomplete="off" required>
-                        <label class="btn btn-sm btn-outline-secondary" for="male">Male</label>
-                        <input type="radio" class="btn-check" name="gender" id="female" autocomplete="off" required>
-                        <label class="btn btn-sm btn-outline-secondary" for="female">Female</label>
-                        <input type="radio" class="btn-check" name="gender" id="secret" autocomplete="off" required>
-                        <label class="btn btn-sm btn-outline-secondary" for="secret">Secret</label>                         
-                    </div>
-                </form>
+            <p class="paragraph">Please fill out the form for your complaints, suggestions and requests.</p>
+                <div class="wrap-input1 validate-input" data-validate="Name is required">
+<input class="input1" type="text" name="name" placeholder="Name">
+<span class="shadow-input1"></span>
+</div>
+<div class="wrap-input1 validate-input" data-validate="Valid email is required">
+<input class="input1" type="text" name="email" placeholder="Email">
+<span class="shadow-input1"></span>
+</div>
+<div class="wrap-input1 validate-input" data-validate="Subject is required">
+<input class="input1" type="text" name="subject" placeholder="Subject">
+<span class="shadow-input1"></span>
+</div>
+<div class="wrap-input1 validate-input" data-validate="Message is required">
+<input class="input1" name="message" placeholder="Message" />
+<span class="shadow-input1"></span>
+</div>
+<div class="container-contact1-form-btn">
+<button class="contact1-form-btn">
+<span>  SEND </span>
+</button>
+        </div>
         </div>
         </div>
 </template>
@@ -58,154 +46,41 @@ export default{
 </script>
 
 <style lang="scss">
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;700;900&display=swap');
-
-*, body {
-    font-family: 'Poppins', sans-serif;
-    font-weight: 400;
-    -webkit-font-smoothing: antialiased;
-    text-rendering: optimizeLegibility;
-    -moz-osx-font-smoothing: grayscale;
-}
-
-html, body {
-    height: 100%;
-    background-color: #a9d1e0;
-    overflow: hidden;
-}
-
-
-.form-holder {
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-      text-align: center;
-      min-height: 100vh;
-}
-
-.form-holder .form-content {
-    position: relative;
-    text-align: center;
-    display: -webkit-box;
-    display: -moz-box;
-    display: -ms-flexbox;
-    display: -webkit-flex;
-    display: flex;
-    -webkit-justify-content: center;
-    justify-content: center;
-    -webkit-align-items: center;
-    align-items: center;
-    padding: 60px;
-}
-
-.form-content .form-items {
-    border: 3px solid rgb(94, 12, 97);
-    padding: 40px;
-    display: inline-block;
-    width: 50%;
-    min-width: 540px;
-    -webkit-border-radius: 10px;
-    -moz-border-radius: 10px;
-    border-radius: 10px;
-    text-align: left;
-    -webkit-transition: all 0.4s ease;
-    transition: all 0.4s ease;
-}
-
-.form-content h3 {
-    color: rgb(128, 69, 69);
-    text-align: left;
-    font-size: 28px;
-    font-weight: 600;
-    margin-bottom: 5px;
-}
-
-.form-content h3.form-title {
-    margin-bottom: 30px;
-}
-
-.form-content p {
-    color: rgb(128, 69, 69);
-    text-align: left;
-    font-size: 17px;
-    font-weight: 300;
-    line-height: 20px;
-    margin-bottom: 30px;
-}
-
-
-.form-content label, .was-validated .form-check-input:invalid~.form-check-label, .was-validated .form-check-input:valid~.form-check-label{
-    color: rgb(128, 69, 69);
-}
-
-.form-content input[type=text], .form-content input[type=password], .form-content input[type=email], .form-content select {
-    width: 100%;
-    padding: 9px 20px;
-    text-align: left;
-    border: 0;
-    outline: 0;
-    border-radius: 6px;
+@mixin inputBlocks{
+    width: 35% - 10%;
     background-color: #fff;
-    font-size: 15px;
-    font-weight: 300;
-    color: #8D8D8D;
-    -webkit-transition: all 0.3s ease;
-    transition: all 0.3s ease;
-    margin-top: 16px;
+    color: #330000;
+    font-family: 'Times New Roman', Times, serif;
+    margin-left: 500px;
+    margin-bottom: 10px;
+    border-color: #000000;
+    
 }
 
-
-.btn-primary{
-    background-color: #969ba0;
-    outline: none;
-    border: 0px;
-     box-shadow: none;
+.input1{
+    @include inputBlocks();
 }
 
-.btn-primary:hover, .btn-primary:focus, .btn-primary:active{
-    background-color: #a8afb6;
-    outline: none !important;
-    border: none !important;
-     box-shadow: none;
+@mixin send{
+    background-color: #660066;
+    color: bisque;
+    margin-left: 500px;
+    width: 50px;
+
+}
+.contact1-form-btn{
+    @include send();
+}
+h1{
+    color: #660066;
+    margin-left: 500px;
 }
 
-.form-content textarea {
-    position: static !important;
-    width: 100%;
-    padding: 8px 20px;
-    border-radius: 6px;
-    text-align: left;
-    background-color: #fff;
-    border: 0;
-    font-size: 15px;
-    font-weight: 300;
-    color: #8D8D8D;
-    outline: none;
-    resize: none;
-    height: 120px;
-    -webkit-transition: none;
-    transition: none;
-    margin-bottom: 14px;
-}
-
-.form-content textarea:hover, .form-content textarea:focus {
-    border: 0;
-    background-color: #ebeff8;
-    color: #8D8D8D;
-}
-
-.mv-up{
-    margin-top: -9px !important;
-    margin-bottom: 8px !important;
-}
-
-.invalid-feedback{
-    color: #ff606e;
-}
-
-.valid-feedback{
-   color: #2acc80;
+.paragraph{
+    color: #001f4d;
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 20px;
+    margin-left: 500px;
 }
 
 </style>
