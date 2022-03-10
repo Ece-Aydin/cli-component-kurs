@@ -1,30 +1,37 @@
 <template>
-  <div id="nav">
-    <!-- <router-link to="/">Home</router-link> |
-    <router-link to="/about">About</router-link> | -->
-    <router-link to="/anasayfa">Anasayfa</router-link> |
-    
-    <router-link to="/divided">Login / Sign Up</router-link> |
-    
-    <router-link to="/contact">Contact</router-link> |
-    
-    <router-link to="/profil">Profile</router-link> |
+  <div id="app1">
+    <h2>MY COUNTRY EXAMPLE</h2>
+    <div>{{ someParagraph }}</div>
+    <search-part />
   </div>
-  <router-view/>
 </template>
 
-<style lang="scss">
-
-#nav {
-  padding: 30px;
-
-  a {
-    font-weight: bold;
-    color: #2c3e50;
-
-    &.router-link-exact-active {
-      color: #42b983;
+<script>
+import SearchPart from "@/components/SearchPart"
+export default{
+  components:{
+    SearchPart
+  },
+  data() {
+    return{
+      someParagraph : ""
+    }
+  },
+  methods:{
+    sendValue() {
+      this.someParagraph;
     }
   }
 }
+</script>
+
+<style lang="scss">
+
+h2{
+  margin-left: 600px;
+  color: #33ccff;
+  font-family: Garamond;
+
+}
+
 </style>
