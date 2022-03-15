@@ -1,27 +1,51 @@
 <template>
-  <div id="app1">
+  <div id="app1" >
     <h2>MY COUNTRY EXAMPLE</h2>
-    <div>{{ someParagraph }}</div>
     <search-part />
+    <country-part />
+
+
   </div>
 </template>
 
 <script>
 import SearchPart from "@/components/SearchPart"
-export default{
+import CountryPart from "@/components/CountryPart"
+import axios from "axios"
+
+
+export default {
   components:{
-    SearchPart
+    SearchPart,
+    CountryPart,
+    
   },
-  data() {
-    return{
-      someParagraph : ""
-    }
-  },
-  methods:{
-    sendValue() {
-      this.someParagraph;
-    }
-  }
+  created() {
+      this.getPosts();
+    },
+    data() {
+      return {
+        posts: [],
+        errors: [],
+        searchQuery: null,
+       
+      }
+    },
+    methods: {
+      getPosts() {
+        axios
+          .get("https://restcountries.com/v3.1/all")
+          .then(response => {
+            console.log(response.data)
+          })
+          .catch(error => {
+            console.error(error)
+          })
+      }
+    },
+
+
+
 }
 </script>
 
