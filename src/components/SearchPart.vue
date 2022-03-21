@@ -1,6 +1,6 @@
 <template>
 
-<img src="myLogo.png" alt="logom" width="90" height="90">
+<img src="myLogo.png" alt="logom" width="100" height="100">
 
 <form  @submit.prevent>
   <input  type="text" placeholder="Search"  aria-label="Search" 
@@ -75,7 +75,7 @@ export default{
 
 <style lang="scss">
 img{
-    margin-left: 750px;
+    margin-left: 745px;
     border: 1px;
     border-style: solid;
     
