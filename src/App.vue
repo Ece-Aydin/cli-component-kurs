@@ -1,9 +1,8 @@
 <template>
   <div id="app1" >
     <h2>MY COUNTRY EXAMPLE</h2>
-    <search-part />
+    <search-part    />
     <country-part />
-
 
   </div>
 </template>
@@ -27,22 +26,29 @@ export default {
       return {
         posts: [],
         errors: [],
-        searchQuery: null,
-       
+        country : '',
+        // postList : ['https://restcountries.com/v3.1/name/country']
+        
       }
     },
     methods: {
       getPosts() {
         axios
-          .get("https://restcountries.com/v3.1/all")
+          .get("https://restcountries.com/v3.1/name/country")
           .then(response => {
             console.log(response.data)
+            console.log(response.config)
+            console.log(response.status)
+            console.log(response.statusText)
           })
           .catch(error => {
             console.error(error)
           })
-      }
-    },
+
+
+      },
+
+},
 
 
 
