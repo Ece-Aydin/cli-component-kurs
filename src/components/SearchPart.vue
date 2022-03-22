@@ -2,6 +2,19 @@
 
 <img src="myLogo.png" alt="logom" width="100" height="100">
 
+<form  >
+<ul @click="showDetails" v-show="selectedObj && Object.keys(selectedObj).length > 0" class="liste">
+
+ 
+ <li class="liste"> {{ selectedObj.capital }} </li>
+ <li class="liste"> {{ selectedObj.subregion}} </li>
+ <li class="liste"> {{ selectedObj.languages }} </li>
+ <li class="liste"> {{ selectedObj.flags }} </li>
+</ul>
+</form>
+
+
+
 <form  @submit.prevent>
   <input  type="text" placeholder="Search"  aria-label="Search" 
     v-model.trim="search"  @keyup="getAll"  />
@@ -11,10 +24,13 @@
    <br>
    <br>
     <ul>
-          <li v-for="obje in people" :key="obje.name.common">
+          <li v-for="obje in people" :key="obje.name.common" @click="showDetails(obje)"  >
+                                                           
             {{ obje.name.common }}
           </li>
     </ul>
+    
+
   
 </form>
 
@@ -29,6 +45,9 @@ export default{
         return{
             search: "",  
             people: [],
+            selectedObj: {},
+            
+            
                       
         }
     },
@@ -45,7 +64,7 @@ export default{
       fetch("https://restcountries.com/v3.1/all")
         .then(response => response.json())
         .then(res => {
-          console.log(res)
+           console.log(res)
           if (this.search) {
             this.people = res.filter(people =>
               people.name.common.toLowerCase().includes(this.search.toLowerCase())
@@ -55,11 +74,16 @@ export default{
           }
            else {
             this.people = res;
-            console.log(res)
+             //console.log(res)
           }
         });
+    },
+    showDetails(obje) {
+     this.selectedObj = obje;
+
+
     }
-             
+           
       
 },
 
@@ -134,6 +158,16 @@ input {
 			-3px 3px 30px #4d5558;
 	}
 	
+}
+
+.liste{
+  list-style: none;
+    padding: 10px;
+    border: 1px solid #ca6c6c;
+    margin-top: 12px;
+    border-radius: 15px;
+    background: #fff;
+    color : #330066
 }
 
 </style>
